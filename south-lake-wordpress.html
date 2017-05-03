@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>South Lake Community Center</title>
+    <style media="screen">
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #ff6351;
+        }
+
+        header {
+            width: 100%;
+            height: 12.5em;
+            background: #ff6351;
+        }
+
+        .top-header {
+            width: 100%;
+            height: 70%;
+            color: white;
+            font-family: avenir;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-header div {
+            margin: 0 1%;
+        }
+
+        .logo {
+            width: 9%;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .top-header div h1 {
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            font-variant: small-caps;
+        }
+
+        .contact {
+            width: 16%;
+        }
+
+        .contact div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact div p {
+            font-size: 0.8em;
+            margin: 2% 0.5%;
+        }
+
+        .contact div p a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact div svg {
+            height: 1.25em;
+            width: 1.25em;
+            margin: 2% 0.5%;
+        }
+
+        nav {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            display: flex;
+        }
+
+        nav div {
+            font-size: 0.9em;
+            padding: 1.4% 2%;
+            position: relative;
+            font-family: avenir;
+        }
+
+        nav div ul {
+            width: 12em;
+            top: 90%;
+            position: absolute;
+            list-style: none;
+            padding: 0;
+            margin: 5% 0;
+            display: none;
+            left: 0;
+        }
+
+        nav div ul li {
+            padding: 8% 20% 8% 20%;
+        }
+
+        nav div input {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 20em;
+            height: 3.5em;
+            display: none;
+        }
+
+        nav div:hover {
+            color: white;
+            cursor: pointer;
+            background: #ff6351;
+        }
+
+        nav div:hover ul {
+            display: block;
+            background: #fff;
+            color: black;
+        }
+
+        nav div:hover ul:hover li:hover {
+            background: #ff6351;
+            color: white;
+        }
+
+        nav div:hover input {
+            display: block;
+        }
+
+        .main-div {
+            width: 100%;
+            height: 43em;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 1, 1, 0.6)), url(http://www.nishant-kaushish.com/wp-content/uploads/2017/05/south-lake-bg-large.jpeg);
+        }
+
+        .main-div h1 {
+            width: 60%;
+            text-align: center;
+            padding-top: 20%;
+            margin: 0 auto 2% auto;
+            font-size: 3em;
+            color: white;
+            font-family: helvetica;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        .main-div div {
+            text-align: center;
+        }
+
+        .main-div div button {
+            width: 15em;
+            height: 3em;
+            font-size: 1.2em;
+            background: #00cc65;
+            border: 1px solid #00cc65;
+            color: white;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px 0.5px #191919;
+        }
+
+        .main-div div button:hover {
+            background: springgreen;
+        }
+
+        .main-div div button:focus {
+            outline: none;
+        }
+
+        .main-div div button:active {
+            box-shadow: none;
+        }
+
+        .latest-div {
+            width: 100%;
+            height: 25em;
+            display: flex;
+            justify-content: center;
+            font-family: avenir;
+        }
+
+        .latest-div>div {
+            width: 25%;
+            margin: 2% 1%;
+            text-align: center;
+            background: #ff6351;
+            color: white;
+            cursor: pointer;
+        }
+
+        .latest-div div div {
+            width: 100%;
+            height: 20%;
+        }
+
+        .latest-div div div svg {
+            width: 50%;
+            height: 100%;
+        }
+
+        .latest-div div p {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .latest-div div button {
+            width: 50%;
+            height: 15%;
+            font-size: 1em;
+            margin-top: 5%;
+            background: #00cc65;
+            border: 1px solid #00cc65;
+            color: white;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .latest-div div button:hover {
+            background: springgreen;
+        }
+
+        .latest-div div button:focus {
+            outline: none;
+        }
+
+        .latest-div div button:active {
+            box-shadow: none;
+        }
+
+        .gallery-section {
+            background: #191919;
+            width: 100%;
+            height: 35em;
+            color: white;
+            font-family: avenir;
+            text-align: center;
+        }
+
+        .gallery-section h1 {
+            text-align: center;
+            margin: 0;
+            padding-top: 3%;
+            font-size: 2.5em;
+        }
+
+        .gallery-section button {
+            font-size: 1.2em;
+            background: #00cc65;
+            color: white;
+            margin-top: 4%;
+            width: 12em;
+            height: 3em;
+            font-family: avenir;
+            border: 1px solid #191919;
+            cursor: pointer;
+        }
+
+        .gallery-section button:hover {
+            background: springgreen;
+        }
+
+        .gallery-section button:focus {
+            outline: none;
+        }
+
+        .gallery-section button:active {
+            box-shadow: none;
+        }
+
+        .galleries {
+            margin-top: 2%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .galleries div {
+            text-align: center;
+            width: 22%;
+            border: 2px solid #fff;
+            margin-left: 1%;
+            margin-right: 1%;
+            cursor: pointer;
+        }
+
+        .galleries div img {
+            width: 100%;
+            border-bottom: 2px solid #fff;
+        }
+
+        .galleries div p {
+            width: 100%;
+            margin: 0;
+            padding: 4% 0;
+            letter-spacing: 1px;
+        }
+
+        .galleries div:hover {
+            background: #ff6351;
+        }
+
+        .next-event {
+            width: 100%;
+            height: 24em;
+            font-family: avenir;
+            padding: 4% 0;
+            background: cornsilk;
+        }
+
+        .next-event div {
+            float: left;
+            width: 47%;
+            overflow: hidden;
+            cursor: pointer;
+            margin-left: 5%;
+        }
+
+        .next-event div img {
+            width: 99%;
+            border: 1px solid #666666;
+        }
+
+        .next-event div h1 {
+            font-size: 2em;
+            margin-bottom: 1%;
+            padding-top: 1%;
+        }
+
+        .next-event div p {
+            font-size: 1em;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            width: 70%;
+        }
+
+        .next-event div button {
+            width: 10em;
+            height: 2.5em;
+            font-size: 1.2em;
+            font-family: avenir;
+            cursor: pointer;
+            background: #00cc65;
+            padding: 1%;
+            color: white;
+            border: 1px solid #00cc65;
+        }
+
+        .next-event div button:hover {
+            background: springgreen;
+        }
+
+        .next-event div button:focus {
+            outline: none;
+        }
+
+        .next-event div button:active {
+            box-shadow: none;
+        }
+
+        .next-event .right-div {
+            width: 43%;
+        }
+
+        .next-event .right-div h2 {
+            margin: 0;
+        }
+
+        footer {
+            width: 100%;
+            height: 6em;
+            border: 1px solid #000;
+            background: #191919;
+            color: white;
+            font-family: avenir;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .social-media {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-media img {
+            width: 8%;
+            float: left;
+            padding: 2% 2%;
+            margin-left: 3%;
+            margin-right: 3%;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .social-media img:hover {
+            background: #ff6351;
+        }
+
+        footer p {
+            width: 20%;
+            text-align: center;
+            margin: 0;
+            padding-top: 3%;
+            font-size: 0.8em;
+        }
+
+        .quick-links {
+            float: right;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quick-links div {
+            padding: 0 4%;
+            cursor: pointer;
+            border-right: 1px solid #fff;
+        }
+
+        .quick-links div:last-child {
+            border: none;
+        }
+
+        .quick-links div:hover {
+            color: #ff6351;
+        }
+
+        @media (max-width: 75em) {
+            .contact div p {
+                font-size: 0.7em;
+            }
+            .main-div h1 {
+                font-size: 2.5em;
+            }
+            .latest-div div {
+                width: 30%;
+            }
+            .gallery-section {
+                height: 30em;
+            }
+            .gallery-section div div {
+                font-size: 0.8em;
+            }
+            .next-event {
+                height: 45em;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            .next-event div {
+                float: none;
+                width: 60%;
+                margin: 1% auto;
+                padding: 0;
+            }
+            .next-event .right-div {
+                width: 60%;
+                padding: 0;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .next-event .right-div h1 {
+                margin-top: 1%;
+            }
+            .next-event .right-div p {
+                width: 80%;
+                margin: 2% auto;
+            }
+            footer {
+                justify-content: space-between;
+            }
+            footer p {
+                padding-top: 3.5%;
+            }
+            .social-media {
+                width: 35%;
+            }
+            .quick-links {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 50em) {
+            header {
+                height: 9em;
+            }
+            .top-header {
+                float: none;
+                display: block;
+                text-align: center;
+            }
+            .top-header div {
+                display: block;
+                float: left;
+                width: 70%;
+            }
+            .top-header div h1 {
+                margin: 0;
+                margin: 0%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                font-size: 2em;
+            }
+            .top-header .logo {
+                width: 12%;
+                margin-left: 2%;
+            }
+            .top-header .contact {
+                width: 100%;
+                float: none;
+                text-align: center;
+            }
+            .contact div {
+                width: 30%;
+                display: flex;
+                justify-content: center;
+            }
+            nav div {
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+            nav div ul {
+                width: 10em;
+                padding-top: 1.8%;
+                padding-bottom: 1.8%;
+            }
+            nav div ul li {
+                padding-left: 10%;
+            }
+            nav div input {
+                width: 12em;
+            }
+            .main-div {
+                height: 35em;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 1, 1, 0.6)), url(http://www.nishant-kaushish.com/wp-content/uploads/2017/05/south-lake-bg-medium.jpeg) 30% 0;
+            }
+            .main-div h1 {
+                font-size: 2em;
+            }
+            .main-div div button {
+                width: 10em;
+                height: 2.5em;
+            }
+            .latest-div {
+                flex-flow: column;
+                height: 55em;
+            }
+            .latest-div div {
+                width: 80%;
+                height: 30%;
+                margin: 2% auto;
+                padding: 0;
+            }
+            .latest-div div div {
+                width: 20%;
+                margin: 0 auto;
+            }
+            .latest-div div button {
+                width: 15em;
+                height: 3em;
+                margin-top: 2%;
+            }
+            .gallery-section {
+                height: 98em;
+            }
+            .gallery-section button {
+                margin-top: 1.5%;
+            }
+            .galleries {
+                flex-flow: column;
+            }
+            .galleries div {
+                width: 50%;
+                margin: 2% auto;
+            }
+            .galleries div p {
+                font-size: 1.5em;
+            }
+            .next-event {
+                background: cornsilk;
+            }
+            .next-event div {
+                float: none;
+                width: 90%;
+                margin: 0 auto;
+                padding: 2%;
+            }
+            .next-event .right-div {
+                width: 100%;
+            }
+            .next-event .right-div h1 {
+                margin-top: 1%;
+            }
+            .next-event .right-div p {
+                width: 80%;
+            }
+            footer {
+                flex-flow: column;
+                height: 10em;
+            }
+            footer p {
+                margin: 0 auto;
+                padding: 0;
+                padding-bottom: 1%;
+                width: 70%;
+            }
+            .social-media {
+                width: 70%;
+                padding-top: 2%;
+                margin: 0 auto;
+            }
+            .social-media img {
+                width: 5%;
+            }
+            .quick-links {
+                width: 70%;
+                margin: 0 auto;
+                padding-bottom: 1%;
+            }
+        }
+
+        @media (max-width: 37.5em) {
+            header {
+                height: 12em;
+            }
+            .top-header div {
+                width: 70%;
+            }
+            .top-header div h1 {
+                padding: 3%;
+                font-size: 1.5em;
+                text-transform: capitalize;
+                font-variant: none;
+            }
+            .contact div {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+            }
+            .contact div svg {
+                width: 2em;
+                height: 2em;
+            }
+            .contact div p {
+                font-size: 1em;
+            }
+            .contact div:last-child {
+                display: none;
+            }
+            nav div {
+                padding: 3.4% 2%;
+            }
+            nav div:last-child {
+                display: none;
+            }
+            .main-div {
+                height: 480px;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 1, 1, 0.6)), url(http://www.nishant-kaushish.com/wp-content/uploads/2017/05/south-lake-bg-small.jpeg) 20% 0;
+            }
+            .main-div h1 {
+                font-size: 1.5em;
+                line-height: 1.5;
+            }
+            .latest-div div {
+                width: 100%;
+            }
+            .gallery-section {
+                height: 120em;
+            }
+            .galleries div {
+                width: 90%;
+            }
+            .next-event {
+                height: 40em;
+            }
+            .next-event div:first-child {
+                width: 90%;
+                padding: 0;
+                padding-top: 5%;
+                border: none;
+            }
+        }
+
+        @media (max-width: 31.5em) {
+            header {
+                height: 12.5em;
+            }
+            .contact div {
+                width: 90%;
+            }
+            nav div {
+                padding: 5% 2%;
+            }
+            nav div ul {
+                width: 8em;
+            }
+            .contact-hide {
+                display: none;
+            }
+            .main-div {
+                height: 25em;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 1, 1, 0.6)), url(south-lake-bg-small.jpeg) 50% 0;
+            }
+            .main-div h1 {
+                font-size: 1.7em;
+            }
+            .latest-div {
+                height: 60em;
+            }
+            .latest-div div {
+                padding: 2%;
+            }
+            .latest-div div h2 {
+                margin-top: 0;
+                padding-bottom: 0;
+            }
+            .latest-div div button {
+                width: 12em;
+                height: 2.8em;
+            }
+            .gallery-section {
+                height: 102em;
+            }
+            .gallery-section h1 {
+                font-size: 2em;
+            }
+            .galleries div {
+                width: 95%;
+            }
+            .galleries div p {
+                font-size: 1.2em;
+            }
+            .next-event {
+                height: 35em;
+            }
+            .social-media {
+                width: 100%;
+            }
+            footer p {
+                font-size: 0.5em;
+            }
+            .quick-links {
+                width: 100%;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 28em) {
+            .gallery-section {
+                height: 92em;
+            }
+            .gallery-section h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 25em) {
+            .gallery-section {
+                height: 85em;
+            }
+            .gallery-section h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 22em) {
+            nav div {
+                padding: 6.3% 2%;
+            }
+            nav div ul {
+                width: 8em;
+            }
+            .gallery-section {
+                height: 76em;
+            }
+            .gallery-section h1 {
+                font-size: 2em;
+            }
+        }
+        /*# sourceMappingURL=south-lake.css.map */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/05/south-lake-logo.png" alt="south-lake">
+            </div>
+            <div>
+                <h1>South Lake Ottey Center</h1>
+            </div>
+            <div class="contact">
+                <div>
+                    <svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <p><a href="tel:+61894172372"> (08) 9417 2372</a></p>
+                </div>
+                <div>
+                    <svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                    <p><a href="https://goo.gl/maps/MnascyezLV72" target="_blank">2 S Lake Dr, South Lake, WA 6164</a></p>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div>Home</div>
+            <div>About
+                <ul>
+                    <li>Misson</li>
+                    <li>Vision</li>
+                    <li>Values</li>
+                    <li>Careers</li>
+                    <li>Our People</li>
+                </ul>
+            </div>
+
+            <div>News
+                <ul>
+                    <li>Meetings</li>
+                    <li>Functions</li>
+                    <li>Competitions</li>
+                    <li>Awards</li>
+                </ul>
+            </div>
+
+            <div>Collaborate
+                <ul>
+                    <li>Criteria</li>
+                    <li>Facilities</li>
+                    <li>Availability</li>
+                    <li>Media</li>
+                </ul>
+            </div>
+
+            <div class="contact-hide">Contact
+                <ul>
+                    <li>Council</li>
+                    <li>Manager</li>
+                    <li>Opening Hours</li>
+                </ul>
+            </div>
+
+            <div>
+                <svg fill="#000000" height="17" viewBox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+                <input type="text" autofocus="autofocus" placeholder="Click to type &amp press enter">
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-div">
+        <h1>For local families &amp community</h1>
+        <div><button>Explore</button></div>
+    </div>
+
+
+    <div class="latest-div">
+        <div>
+            <div><svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/>
+            </svg></div>
+            <h2>Just Concluded</h2>
+            <p>We host weekly events to bring the local community together. Check out all the latest meetings and events below and what the locals are saying about us.</p>
+            <button>More</button>
+        </div>
+        <div>
+            <div><svg fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg></div>
+            <h2>Monthly Calender</h2>
+            <p>If you would like to check upcoming events or simply book a function involving the local community, please check our calender for availability times.</p>
+            <button>More</button>
+        </div>
+        <div>
+            <div><svg fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg></div>
+            <h2>Our Team</h2>
+            <p>Our helpful staff is ready to lend a hand and can be contacted during business hours at (08) 9417 2372 or via email at otteyfam@bigpond.com.au.</p>
+            <button>More</button>
+        </div>
+    </div>
+
+
+    <div class="gallery-section">
+
+        <h1>Popular Galleries</h1>
+
+        <div class="galleries">
+            <div>
+                <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/05/seniors.jpg" alt="Seniors Celebrations">
+                <p>Sunday Events For Seniors</p>
+            </div>
+            <div>
+                <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/05/scrapbooking.jpg" alt="Scrapbooking Competitions">
+                <p>Creative Scrapbooking Events</p>
+            </div>
+            <div>
+                <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/05/picnic.jpeg" alt="picnic events">
+                <p>Picnic Events Once Every Month</p>
+            </div>
+            <div>
+                <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/05/children.jpeg" alt="children events">
+                <p>Promoting creativity in kids Events</p>
+            </div>
+        </div>
+        <button>More Galleries</button>
+    </div>
+
+
+    <div class="next-event">
+        <div>
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/05/origami.jpeg" alt="Origami Event">
+        </div>
+
+        <div class="right-div">
+            <h1>Upcoming Event</h1>
+            <h2>Learn Origami</h2>
+            <p>The design agency - Creative Minds is hosting an origami event which involves hands-on activities for learning origami. This is a free event and suitable for everyone. Click below for details.
+            </p>
+            <button>More Info</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/facebook.png" alt="Share on facebook">
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/twitter.png" alt="Share on twitter">
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/instagram.png" alt="Share on instagram">
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/google.png" alt="Share on google+">
+        </div>
+        <p>Copyright &copy 2017 |&nbspAll Rights Reserved </p>
+        <div class="quick-links">
+            <div>Location</div>
+            <div>People</div>
+            <div>Stories</div>
+            <div>Join us</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
